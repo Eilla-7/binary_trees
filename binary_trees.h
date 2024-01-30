@@ -45,10 +45,10 @@ int max(int a, int b);
 size_t binary_tree_size(const binary_tree_t *tree);
 size_t binary_tree_leaves(const binary_tree_t *tree);
 int binary_tree_balance(const binary_tree_t *tree);
+int binary_tree_is_full(const binary_tree_t *tree);
+int recursive_helper(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree);
 size_t binary_tree_nodes(const binary_tree_t *tree);
 size_t binary_tree_power(size_t base, size_t ex);
-
-
 
 #endif /* BINARY_TREES_H */
