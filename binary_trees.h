@@ -121,5 +121,8 @@ avl_t *array_to_avl(int *array, size_t size);
 
 avl_t *avl_remove(avl_t *root, int value);
 avl_t *balance_recursive(avl_t **tree);
+bst_t *bst_remove_avl(bst_t *root, int value);
+bst_t *bst_search_avl(const bst_t *tree, int value);
+bst_t *bst_recursive_remove_avl(bst_t *root, bst_t *node);
 
 #endif /* BINARY_TREES_H */
