@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * enqueue - Enqueues a binary tree node into the queue
+ * complete_enqueue - Enqueues a binary tree node into the queue
  * @head: Pointer to the head of the queue
  * @node: Pointer to the binary tree node to be enqueued
  *
@@ -11,7 +11,8 @@
  *
  * Return: Pointer to the head of the modified queue
  */
-complete_queue_t *enqueue(complete_queue_t **head, binary_tree_t *node)
+complete_queue_t *complete_enqueue(complete_queue_t **head,
+		binary_tree_t *node)
 {
 	complete_queue_t *new = malloc(sizeof(complete_queue_t));
 	complete_queue_t *curr = NULL;
@@ -39,7 +40,7 @@ complete_queue_t *enqueue(complete_queue_t **head, binary_tree_t *node)
 }
 
 /**
- * dequeue - Dequeues a binary tree node from the queue
+ * complete_dequeue - Dequeues a binary tree node from the queue
  * @head: Pointer to the head of the queue
  *
  * Description:
@@ -48,7 +49,7 @@ complete_queue_t *enqueue(complete_queue_t **head, binary_tree_t *node)
  *
  * Return: Pointer to the dequeued binary tree node
  */
-binary_tree_t *dequeue(complete_queue_t **head)
+binary_tree_t *complete_dequeue(complete_queue_t **head)
 {
 	complete_queue_t *temp;
 	binary_tree_t *node;
@@ -109,10 +110,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	enqueue(&head, (binary_tree_t *)tree);
+	complete_enqueue(&head, (binary_tree_t *)tree);
 	while (head)
 	{
-		tmp = dequeue(&head);
+		tmp = complete_dequeue(&head);
 
 		if (tmp->left)
 		{
@@ -121,7 +122,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 				free_queue(head);
 				return (0);
 			}
-			enqueue(&head, tmp->left);
+			complete_enqueue(&head, tmp->left);
 		}
 		else
 			is_nonfull = 1;
@@ -133,7 +134,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 				free_queue(head);
 				return (0);
 			}
-			enqueue(&head, tmp->right);
+			complete_enqueue(&head, tmp->right);
 		}
 		else
 			is_nonfull = 1;
