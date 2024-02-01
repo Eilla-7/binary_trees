@@ -26,7 +26,6 @@ typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
 
-
 /**
  * struct queue_node - Queue node
  * @node: node of the tree
@@ -49,6 +48,18 @@ typedef struct queue_s
 	queue_node_t *start;
 	queue_node_t *end;
 } queue_t;
+
+/**
+ * struct complete_queue_s - Structure for a queue node
+ * @node: Pointer to a binary tree node
+ * @next: Pointer to the next node in the queue
+ */
+struct complete_queue_s
+{
+	binary_tree_t *node;
+	struct complete_queue_s *next;
+};
+typedef struct complete_queue_s complete_queue_t;
 
 
 /* ============ PRINT FUNCTION ============ */
@@ -79,11 +90,10 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		const binary_tree_t *second);
-
-
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 const binary_tree_t *dequeue(queue_t *q);
 void enqueue(queue_t *q, const binary_tree_t *node);
+int binary_tree_is_complete(const binary_tree_t *tree);
 
 
 #endif /* BINARY_TREES_H */
