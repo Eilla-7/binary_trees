@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
-
+#include <limits.h>
 /**
  * struct binary_tree_s - Binary tree node
  *
@@ -90,6 +90,11 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		const binary_tree_t *second);
+
+
+int binary_tree_is_bst(const binary_tree_t *tree);
+int is_binary_search_tree(const binary_tree_t *tree, int min, int max);
+
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 const binary_tree_t *dequeue(queue_t *q);
 void enqueue(queue_t *q, const binary_tree_t *node);
