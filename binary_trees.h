@@ -114,4 +114,9 @@ avl_t *avl_insert(avl_t **tree, int value);
 avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 		avl_t **new_node, int value);
 
+
+avl_t *sorted_array_to_avl(int *array, size_t size);
+avl_t *build_avl_tree(int *array, int start, int end, avl_t *parent);
+
+
 #endif /* BINARY_TREES_H */
