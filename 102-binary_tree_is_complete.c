@@ -67,6 +67,29 @@ binary_tree_t *dequeue(complete_queue_t **head)
 }
 
 /**
+ * free_queue - Frees the memory allocated for a queue
+ * @head: Pointer to the head of the queue
+ *
+ * Description:
+ * This function traverses the given queue and frees the memory associated
+ * with each node in the queue. It starts from the head of the queue and
+ * iteratively frees each node until the end of the queue is reached.
+ *
+ * @head: Pointer to the head of the queue to be freed
+ */
+void free_queue(complete_queue_t *head)
+{
+	complete_queue_t *temp;
+
+	while (head)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+}
+
+/**
  * binary_tree_is_complete - Checks if a binary tree is complete
  * @tree: Pointer to the root of the binary tree
  *
@@ -94,7 +117,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		if (tmp->left)
 		{
 			if (is_nonfull)
+			{
+				free_queue(head);
 				return (0);
+			}
 			enqueue(&head, tmp->left);
 		}
 		else
@@ -103,7 +129,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		if (tmp->right)
 		{
 			if (is_nonfull)
+			{
+				free_queue(head);
 				return (0);
+			}
 			enqueue(&head, tmp->right);
 		}
 		else
