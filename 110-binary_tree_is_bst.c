@@ -38,6 +38,9 @@ int is_binary_search_tree(const binary_tree_t *tree, int min, int max)
 
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	if (tree == NULL)
+		return (0);
+
 	return (is_binary_search_tree(tree, INT_MIN, INT_MAX));
 }
 
