@@ -103,5 +103,8 @@ int binary_tree_is_complete(const binary_tree_t *tree);
 bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
+bst_t *bst_remove(bst_t *root, int value);
+bst_t *bst_recursive_remove(bst_t *root, bst_t *node);
+bst_t *inorder_successor(bst_t *root);
 
 #endif /* BINARY_TREES_H */
