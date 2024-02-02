@@ -95,7 +95,6 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 
 int binary_tree_is_bst(const binary_tree_t *tree);
 int is_binary_search_tree(const binary_tree_t *tree, int min, int max);
-
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 const binary_tree_t *dequeue(queue_t *q);
 void enqueue(queue_t *q, const binary_tree_t *node);
