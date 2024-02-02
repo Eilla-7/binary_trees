@@ -106,7 +106,6 @@ bst_t *bst_search(const bst_t *tree, int value);
 bst_t *bst_remove(bst_t *root, int value);
 bst_t *bst_recursive_remove(bst_t *root, bst_t *node);
 bst_t *inorder_successor(bst_t *root);
-
 int avl_binary_tree(const binary_tree_t *tree, int min, int max);
 int binary_tree_is_avl(const binary_tree_t *tree);
 avl_t *avl_insert(avl_t **tree, int value);
