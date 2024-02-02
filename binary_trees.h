@@ -118,7 +118,6 @@ avl_t *sorted_array_to_avl(int *array, size_t size);
 avl_t *build_avl_tree(int *array, int start, int end, avl_t *parent);
 
 avl_t *array_to_avl(int *array, size_t size);
-
 avl_t *avl_remove(avl_t *root, int value);
 avl_t *balance_recursive(avl_t **tree);
 bst_t *bst_remove_avl(bst_t *root, int value);
