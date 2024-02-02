@@ -109,7 +109,6 @@ bst_t *inorder_successor(bst_t *root);
 
 int avl_binary_tree(const binary_tree_t *tree, int min, int max);
 int binary_tree_is_avl(const binary_tree_t *tree);
-
 avl_t *avl_insert(avl_t **tree, int value);
 avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 		avl_t **new_node, int value);
