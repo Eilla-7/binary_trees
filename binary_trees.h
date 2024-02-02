@@ -125,4 +125,8 @@ bst_t *bst_remove_avl(bst_t *root, int value);
 bst_t *bst_search_avl(const bst_t *tree, int value);
 bst_t *bst_recursive_remove_avl(bst_t *root, bst_t *node);
 
+
+int binary_tree_is_heap(const binary_tree_t *tree);
+int is_max_heap(const binary_tree_t *tree);
+
 #endif /* BINARY_TREES_H */
